@@ -1,0 +1,11 @@
+query_directory: "forecast_fl/queries" # query directories from root
+historical_pdv: "hist_pdv.sql" # query sales pdv information, will load pdv based on pdv list in config/load.yml
+sous_famille: "sous_famille.sql" # query sous famille information
+pdv_info: "pdv_info.sql" # query pdv characteristics information
+ub_info: "ub_info.sql" # query pdv characteristics information
+produit_std_info: "produit_std_info.sql" # query produit standards information
+stock_base: "stock_base.sql" # query stock of Bases
+stock_pdv: "stock_pdv.sql" # query stock of Bases
+commandes_base: "commandes_base.sql" # query orders of Bases
+commandes_pdv: "commandes_pdv.sql" # query orders of PDVs
+rate_familles: "rate_familles.sql" # query ref_famille for stock rates

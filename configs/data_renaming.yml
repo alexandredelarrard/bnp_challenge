@@ -1,0 +1,50 @@
+#
+# Copyright (c) 2021 by Boston Consulting Group. All rights reserved
+#
+datasets:
+  ouverture_pdv:
+    # NOM_FICH: str
+    COD_SITE: COD_SITE
+    DAT_OPEN: DATE
+    COD_OPEN: COD_OPEN
+  meteo_lille:
+    Date: DATE
+    Température: TEMPERATURE
+    Visibilité horizontale: VISIBILITE
+    Vitesse du vent moyen 10 mn: VITESSE_VENT
+    Humidité : HUMIDITE
+    Précipitations dans les 24 dernières heures: PRECIPITATION_24H
+    Pression station: PRESSION
+  meta_ub_mapping:
+    Sous Famille : SOUS_FAMILLE
+    UB_CODE: UB_CODE
+    LCPRGE: UB_NOM
+    Poids UC: POIDS_UC
+    meta_ub : META_UB
+    meta_ub_for_pdv : META_UB_FOR_PDV
+    IS_SEASONAL : IS_SEASONAL
+    IN_COMMANDE_PDV: IN_COMMANDE_PDV
+    REPLACE_UB: REPLACE_UB
+  off_days:
+    COD_SITE: COD_SITE
+    COD_EVE: COD_EVE
+    DAT_DEB: DATE_DEBUT
+  missing_ub_name:
+    UB_CODE: UB_CODE
+    Poids: POIDS
+    Libellé commercial: UB_NOM
+    Vrac/Pièce ?: IS_PIECE
+    Produit biologique ?: IS_BIO
+  calendrier_ouverture:
+    codePdv: COD_SITE
+    Date: DATE
+    Heures: HEURES_OUVERTURE
+  prix_hebdomadaire:
+    DTE: DATE
+    # CODE_PDV: COD_SITE
+    CDPRGE: UB_CODE
+    PPTTC: PRIX_UNITAIRE_HEBDO
+  prix_cadencier_hp_full:
+    JourDebutSemaine: DATE
+    CDPRGE: UB_CODE
+    PPTC: PRIX_UNITAIRE_CADENCIER_HP

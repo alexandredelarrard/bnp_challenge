@@ -1,0 +1,54 @@
+#
+# Copyright (c) 2021 by Boston Consulting Group. All rights reserved
+#
+dtypes:
+  ouverture_pdv:
+    # NOM_FICH: str
+    COD_SITE: str
+    DAT_OPEN: str
+    COD_OPEN: int
+  meteo_lille:
+    Date: str
+    Température: float
+    Visibilité horizontale: float
+    Vitesse du vent moyen 10 mn: float
+    Humidité : float
+    Précipitations dans les 24 dernières heures: float
+    Pression station: float
+  meta_ub_mapping:
+    Sous Famille : str
+    UB_CODE: str
+    LCPRGE: str
+    Poids UC: float
+    meta_ub : str
+    meta_ub_for_pdv : str
+    IS_SEASONAL : int
+    IN_COMMANDE_PDV: int
+    REPLACE_UB: str
+  off_days:
+    COD_SITE: str
+    COD_EVE: str
+    DAT_DEB: str
+  missing_ub_name:
+    UB_CODE: str
+    Poids: float
+    Libellé commercial: str
+    Vrac/Pièce ?: str
+    Produit biologique ?: str
+  calendrier_ouverture:
+    codePdv: str
+    Date: str
+    Heures: float
+  prix_hebdomadaire:
+    DTE: str
+    # CODE_PDV: int
+    CDPRGE: str
+    PPTTC: float
+  prix_cadencier_hp_full:
+    JourDebutSemaine: str
+    CDPRGE: str
+    PPTC: str # Converted in loader
+  clustering_pdv_by_type_mapping_ub_level:
+    META_UB: str
+    COD_SITE: str
+    CLUSTER: str

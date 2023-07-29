@@ -1,0 +1,73 @@
+
+# MODEL META UB - LGBM - PDV
+config_lgbm:
+  TARGET: FRAUD_FLAG
+  WEIGHT: WEIGHT
+  FEATURES:
+    - 'COMPUTERS' 
+    - 'FULFILMENT CHARGE' 
+    - 'TELEPHONES FAX MACHINES TWOWAY RADIOS' 
+    - 'AUDIO ACCESSORIES' 
+    - 'COMPUTER PERIPHERALS ACCESSORIES' 
+    - 'TELEVISIONS HOME CINEMA' 
+    - 'BABY CHILD TRAVEL' 
+    - 'WARRANTY' 
+    - 'TABLEWARE' 
+    - 'BED LINEN' 
+    - 'DECORATIVE ACCESSORIES' 
+    - 'LIGHTING' 
+    - 'SOFT FURNISHINGS' 
+    - 'KITCHEN UTENSILS GADGETS' 
+    - 'STORAGE ORGANISATION' 
+    - 'IMAGING EQUIPMENT' 
+    - 'POWER BATTERIES' 
+    - 'BATH LINEN' 
+    - 'HOUSEHOLD CLEANING' 
+    - 'BABYWEAR' 
+    - 'LAUNDRY CLOTHESCARE' 
+    - 'BABY CHANGING' 
+    - 'NURSERY ACCESSORIES' 
+    - 'APPLE' 
+    - 'RETAILER' 
+    - 'SAMSUNG' 
+    - 'LG' 
+    - 'BUGABOO' 
+    - 'LE CREUSET' 
+    - 'OXO' 
+    - 'MAXICOSI' 
+    - 'SONY' 
+    - 'SILVER CROSS' 
+    - 'ANYDAY RETAILER' 
+    - 'SKANDINAVISK' 
+    - 'PANASONIC' 
+    - 'PHILIPS' 
+    - 'ROBERT WELCH' 
+    - 'WEST ELM' 
+    - 'CASH_MEAN' 
+    - 'CASH_STD' 
+    - 'CASH_MIN' 
+    - 'CASH_MAX' 
+    - 'CASH_TOTAL'
+    - NB_OF_ITEMS
+    - MODEL1
+    - NBR_OF_PROD_PURCHAS
+    - WATCH
+    - IPAD
+    - MACBOOK
+    - GALAXY
+  categorical_features:
+    - MODEL1
+  seed: 5432
+  n_splits: 5
+  parameters:
+    objective: binary
+    metric: auc
+    max_depth: 5
+    min_data_in_leaf: 10
+    colsample_bytree: 0.8
+    subsample: 0.85
+    learning_rate: 0.007
+    num_iteration: 2000
+    lambda_l1 : 1
+    n_jobs: -1
+    verbose : -1

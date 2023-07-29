@@ -1,0 +1,7 @@
+table_path:
+  output_preconisations:
+    schema: dbo
+    table_name: preco
+  input_sales:
+    schema: dbo
+    table_name: ventes_generiques
