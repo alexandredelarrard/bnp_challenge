@@ -1,7 +1,4 @@
 name: "default"
 load: !include load.yml
-# dtypes: !include data_dtypes.yml
-# renaming: !include data_renaming.yml
-# queries: !include queries.yml
 # logging: !include logging.yml
 modelling: !include modelling.yml

@@ -1,14 +1,9 @@
-#
-# Copyright (c) 2023 by Boston Consulting Group. All rights reserved
-#
 # -*- coding: utf-8 -*-
 
 import logging
 import warnings
 
 import lightgbm as lgb
-import matplotlib
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import shap
@@ -16,8 +11,6 @@ from sklearn import metrics
 from sklearn.model_selection import KFold, StratifiedKFold
 
 warnings.filterwarnings("ignore")
-matplotlib.use("Agg")
-plt.ioff()
 
 alpha=3
 
@@ -293,6 +286,6 @@ class TrainModel:
         self.total_test = total_test
 
         logging.info("TRAIN full model")
-        # model = self.train_on_set(data, init_score=init_score)
+        model = self.train_on_set(data, init_score=init_score)
 
         return total_test, model

@@ -10,6 +10,10 @@ config_lgbm:
     - 'COMPUTER PERIPHERALS ACCESSORIES'
     - 'TELEVISIONS HOME CINEMA'
     - 'BABY EQUIPMENT'
+    - ELECTRONICS
+    - AUDIO
+    - CLOTHS
+    - HOME
     - 'TABLEWARE'
     - 'BED LINEN'
     - 'DECORATIVE ACCESSORIES'
@@ -33,25 +37,27 @@ config_lgbm:
     - 'SAMSUNG' 
     - 'LG' 
     - 'BUGABOO' 
-    - 'LE CREUSET' 
-    - 'OXO' 
-    - 'MAXICOSI' 
-    - 'SONY' 
-    - 'SILVER CROSS' 
-    - 'ANYDAY RETAILER' 
-    - 'SKANDINAVISK' 
-    - 'PANASONIC' 
-    - 'PHILIPS' 
-    - 'ROBERT WELCH' 
-    - 'WEST ELM' 
-    - 'LSA INTERNATIONAL'
+    # - 'LE CREUSET' 
+    # - 'OXO' 
+    # - 'MAXICOSI' 
+    # - 'SONY' 
+    # - 'SILVER CROSS' 
+    # - 'ANYDAY RETAILER' 
+    # - 'SKANDINAVISK' 
+    # - 'PANASONIC' 
+    # - 'PHILIPS' 
+    # - 'ROBERT WELCH' 
+    # - 'WEST ELM' 
+    # - 'LSA INTERNATIONAL'
     - 'CASH_MEAN' 
     - 'CASH_STD' 
     - 'CASH_MIN' 
     - 'CASH_MAX' 
     - 'CASH_TOTAL'
     - NB_OF_ITEMS
-    - GOODSCODE
+    - FULFILMENT
+    - DMS
+    - CODE_1_RETAILER
     - NBR_OF_PROD_PURCHAS
     - AIRPODS
     - WATCH
@@ -59,10 +65,12 @@ config_lgbm:
     - IPHONE
     - MACBOOK
     - GALAXY
+    - GALAXY_WATCH
     - SAMSUNG_QLED
+    - SONY_OLED
+    - LG_OLED
     - TOTAL_APPLE
   categorical_features:
-    - GOODSCODE
   seed: 5432
   n_splits: 5
   parameters:
@@ -73,6 +81,7 @@ config_lgbm:
     colsample_bytree: 0.85
     subsample: 0.85
     learning_rate: 0.007
+    boosting_type: "gbdt"
     num_iteration: 2000
     lambda_l1 : 1
     n_jobs: -1

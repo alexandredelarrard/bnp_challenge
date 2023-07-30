@@ -25,7 +25,8 @@ if __name__ == "__main__":
     test = train_step.test_on_set(model, test)
     evaluation_r_auc(total_test["FRAUD_FLAG"], total_test["PREDICTION_FRAUD_FLAG"])
 
-    # 0.20648211314465909 -> 	0.1940
+    # soumission 2 = 0.20648211314465909 -> 	0.1940
+    # soumission 3 = 0.21160096799845474 ->     ???
 
     submission = test[["ID", "PREDICTION_FRAUD_FLAG"]].rename(columns={"PREDICTION_FRAUD_FLAG" : "FRAUD_FLAG"}).reset_index()
     submission["FRAUD_FLAG"] = submission["FRAUD_FLAG"].clip(0,1)
