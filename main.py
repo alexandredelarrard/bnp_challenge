@@ -19,8 +19,9 @@ if __name__ == "__main__":
     # training 
     train_step = TrainModel(loader.config.modelling.config_lgbm, data=train)
 
-    train["WEIGHT"] = np.where(train["FRAUD_FLAG"] == 1, 3, 1)
+    train["WEIGHT"] = np.where(train["FRAUD_FLAG"] == 1, 1, 1)
     total_test, model = train_step.modelling_cross_validation(data=train)
+    
     test = train_step.test_on_set(model, test)
     evaluation_r_auc(total_test["FRAUD_FLAG"], total_test["PREDICTION_FRAUD_FLAG"])
 
@@ -29,5 +30,4 @@ if __name__ == "__main__":
     submission = test[["ID", "PREDICTION_FRAUD_FLAG"]].rename(columns={"PREDICTION_FRAUD_FLAG" : "FRAUD_FLAG"}).reset_index()
     submission["FRAUD_FLAG"] = submission["FRAUD_FLAG"].clip(0,1)
     submission.columns = ["index", "ID", "fraud_flag"]
-    submission.to_csv(loader.base_path + "/submission_300723_2.csv", sep=",", index=False)
-    
+    submission.to_csv(loader.base_path + "/submission_300723_3.csv", sep=",", index=False)

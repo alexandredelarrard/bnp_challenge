@@ -4,29 +4,30 @@ config_lgbm:
   TARGET: FRAUD_FLAG
   WEIGHT: WEIGHT
   FEATURES:
-    - 'COMPUTERS' 
-    - 'FULFILMENT CHARGE' 
-    - 'TELEPHONES FAX MACHINES TWOWAY RADIOS' 
-    - 'AUDIO ACCESSORIES' 
-    - 'COMPUTER PERIPHERALS ACCESSORIES' 
-    - 'TELEVISIONS HOME CINEMA' 
-    - 'BABY CHILD TRAVEL' 
-    - 'WARRANTY' 
-    - 'TABLEWARE' 
-    - 'BED LINEN' 
-    - 'DECORATIVE ACCESSORIES' 
-    - 'LIGHTING' 
-    - 'SOFT FURNISHINGS' 
-    - 'KITCHEN UTENSILS GADGETS' 
-    - 'STORAGE ORGANISATION' 
-    - 'IMAGING EQUIPMENT' 
-    - 'POWER BATTERIES' 
-    - 'BATH LINEN' 
-    - 'HOUSEHOLD CLEANING' 
-    - 'BABYWEAR' 
-    - 'LAUNDRY CLOTHESCARE' 
-    - 'BABY CHANGING' 
-    - 'NURSERY ACCESSORIES' 
+    - 'COMPUTERS'
+    - 'TELEPHONES FAX MACHINES TWOWAY RADIOS'
+    - 'AUDIO ACCESSORIES'
+    - 'COMPUTER PERIPHERALS ACCESSORIES'
+    - 'TELEVISIONS HOME CINEMA'
+    - 'BABY EQUIPMENT'
+    - 'TABLEWARE'
+    - 'BED LINEN'
+    - 'DECORATIVE ACCESSORIES'
+    - 'LIGHTING'
+    - 'SOFT FURNISHINGS'
+    - 'KITCHEN UTENSILS GADGETS'
+    - 'STORAGE ORGANISATION'
+    - 'IMAGING EQUIPMENT'
+    - 'BATH LINEN'
+    - 'POWER BATTERIES'
+    - 'MEN S CLOTHES'
+    - 'LAUNDRY CLOTHESCARE'
+    - 'HOUSEHOLD CLEANING'
+    - 'LIVING DINING FURNITURE'
+    - 'LUGGAGE'
+    - 'COOKWARE'
+    - 'BATHROOM ACCESSORIES'
+    - 'HIFI'
     - 'APPLE' 
     - 'RETAILER' 
     - 'SAMSUNG' 
@@ -43,28 +44,33 @@ config_lgbm:
     - 'PHILIPS' 
     - 'ROBERT WELCH' 
     - 'WEST ELM' 
+    - 'LSA INTERNATIONAL'
     - 'CASH_MEAN' 
     - 'CASH_STD' 
     - 'CASH_MIN' 
     - 'CASH_MAX' 
     - 'CASH_TOTAL'
     - NB_OF_ITEMS
-    - MODEL1
+    - GOODSCODE
     - NBR_OF_PROD_PURCHAS
+    - AIRPODS
     - WATCH
     - IPAD
+    - IPHONE
     - MACBOOK
     - GALAXY
+    - SAMSUNG_QLED
+    - TOTAL_APPLE
   categorical_features:
-    - MODEL1
+    - GOODSCODE
   seed: 5432
   n_splits: 5
   parameters:
     objective: binary
-    metric: auc
-    max_depth: 5
+    metric: binary_logloss
+    max_depth: 6
     min_data_in_leaf: 10
-    colsample_bytree: 0.8
+    colsample_bytree: 0.85
     subsample: 0.85
     learning_rate: 0.007
     num_iteration: 2000

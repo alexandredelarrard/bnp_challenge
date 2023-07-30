@@ -11,7 +11,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-# import shap
+import shap
 from sklearn import metrics
 from sklearn.model_selection import KFold, StratifiedKFold
 
@@ -189,8 +189,9 @@ class TrainModel:
                 num_boost_round=self.params["parameters"]["num_iteration"],
                 train_set=train_data,
                 valid_sets=[train_data, val_data],
-                valid_names=["data_train", "data_valid"]
-                # callbacks=[lgb.evaluation_auc(self.params["parameters"]["verbose"])],
+                valid_names=["data_train", "data_valid"],
+                # feval = evaluation_r_auc,
+                callbacks=[lgb.early_stopping(stopping_rounds=1000)],
             )
 
         else:
@@ -292,6 +293,6 @@ class TrainModel:
         self.total_test = total_test
 
         logging.info("TRAIN full model")
-        model = self.train_on_set(data, init_score=init_score)
+        # model = self.train_on_set(data, init_score=init_score)
 
         return total_test, model
